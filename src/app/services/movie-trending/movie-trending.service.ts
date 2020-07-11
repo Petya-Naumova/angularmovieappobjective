@@ -7,13 +7,10 @@ import { MovieModel } from '../../interfaces/movie-model/movie-model';
   providedIn: 'root'
 })
 export class MovieTrendingService {
-
+  private trendingMovieUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=a544e13f3a740ad4a35bfb4a9d4bc6ef';
   constructor(private http: HttpClient) { }
-  // https://api.themoviedb.org/3/trending/movie/week?api_key=a544e13f3a740ad4a35bfb4a9d4bc6ef
-  private movieModelUrl = 'https://api.themoviedb.org/3/trending/movie/week?api_key=a544e13f3a740ad4a35bfb4a9d4bc6ef';
-  // private TrendingMovieResult: Observable<MovieModel>
   getTrendingMovies() { {
-      return this.http.get<MovieModel>(this.movieModelUrl);
+      return this.http.get<MovieModel>(this.trendingMovieUrl);
     }
   }
 }
