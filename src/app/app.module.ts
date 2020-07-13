@@ -14,6 +14,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AboutComponent } from './about/about.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { MovieComponentComponent } from './movie-component/movie-component.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     HomePageComponent,
     NavbarComponent,
     AboutComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    MovieComponentComponent
   ],
   imports: [
     BrowserModule,
