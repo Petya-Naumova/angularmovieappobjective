@@ -1,7 +1,5 @@
-<div fxLayout="row" fxLayoutWrap class="cards">
-
-  <div fxFlex="20" class="example-card" *ngFor="let movie of receivedTrendingMovies">
-    <mat-card>
+<div fxLayout="row wrap"  fxLayoutAlign="center center"  fxLayoutGap="10px" style="margin-top: 5rem">
+    <mat-card fxFlex="18" *ngFor="let movie of receivedTrendingMovies" class="cards">
       <mat-card-header>
         <mat-card-title>{{ movie.title }}</mat-card-title>
         <mat-card-subtitle>{{ movie.release_date | date }}
@@ -20,6 +18,5 @@
         <button mat-button>SHARE</button>
       </mat-card-actions>
     </mat-card>
-  </div>
-
 </div>
+

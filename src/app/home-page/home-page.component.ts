@@ -9,7 +9,7 @@ import {TrendingMovieResult} from '../interfaces/movie-trending-result/trending-
 })
 export class HomePageComponent implements OnInit {
 
-  private receivedTrendingMovies: TrendingMovieResult[] = [];
+  public receivedTrendingMovies: TrendingMovieResult[] = [];
   constructor(private movieTrendingService: MovieTrendingService) { }
 
   ngOnInit(): void {
