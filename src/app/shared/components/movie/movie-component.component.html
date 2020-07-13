@@ -1,5 +1,5 @@
-<div fxLayout="row wrap"  fxLayoutAlign="center center"  fxLayoutGap="10px" style="margin-top: 5rem">
-  <mat-card fxFlex="18" *ngFor="let movie of receivedTrendingMovies" class="cards">
+<div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px" style="margin-top: 8rem">
+  <mat-card fxFlex="18" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let movie of receivedTrendingMovies">
     <mat-card-header>
       <mat-card-title>{{ movie.title }}</mat-card-title>
       <mat-card-subtitle>{{ movie.release_date | date }}
@@ -7,7 +7,7 @@
     </mat-card-header>
     <img mat-card-image src="http://image.tmdb.org/t/p/w185/{{ movie.poster_path }}" alt="{{ movie.title }}">
     <mat-card-content>
-      <p>
+      <p class="card-content">
         {{ movie.overview }}
       </p>
     </mat-card-content>
