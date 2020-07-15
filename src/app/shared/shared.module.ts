@@ -5,14 +5,18 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { AppRoutingModule } from '../app-routing.module';
 
 import { MovieComponent } from './components/movie/movie-component.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
+    NavbarComponent,
     MovieComponent
   ],
   exports: [
+    NavbarComponent,
     MovieComponent
   ],
   imports: [
@@ -22,6 +26,7 @@ import { MovieComponent } from './components/movie/movie-component.component';
     MatCardModule,
     MatIconModule,
     FlexLayoutModule,
+    AppRoutingModule
   ]
 })
 export class SharedModule { }
