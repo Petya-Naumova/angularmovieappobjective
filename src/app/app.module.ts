@@ -4,12 +4,17 @@ import { NgModule } from '@angular/core';
 
 import { HomePageModule } from './features/home-page/home-page.module';
 import { AboutModule } from './features/about/about.module';
+import { TopRatedModule } from './features/top-rated/top-rated.module';
+import { PopularModule } from './features/popular/popular.module';
+
 import { PageNotFoundModule } from './features/page-not-found/page-not-found.module';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 
 import { AppComponent } from './app.component';
+
+
 
 @NgModule({
   declarations: [
@@ -20,6 +25,8 @@ import { AppComponent } from './app.component';
     BrowserAnimationsModule,
     HomePageModule,
     AboutModule,
+    TopRatedModule,
+    PopularModule,
     PageNotFoundModule,
     CoreModule,
     SharedModule

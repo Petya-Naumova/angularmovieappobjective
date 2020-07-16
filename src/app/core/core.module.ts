@@ -2,7 +2,8 @@ import {NgModule, Optional, SkipSelf} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-import { MovieTrendingService } from './services/movie-trending/movie-trending.service';
+import { MoviePopularService } from './services/movie-popular/movie-popular.service';
+import { MovieTopRatedService } from './services/movie-top-rated/movie-top-rated.service';
 
 @NgModule({
   declarations: [],
@@ -12,7 +13,8 @@ import { MovieTrendingService } from './services/movie-trending/movie-trending.s
     HttpClientModule
   ],
   providers: [
-    MovieTrendingService
+    MoviePopularService,
+    MovieTopRatedService
   ]
 })
 export class CoreModule {

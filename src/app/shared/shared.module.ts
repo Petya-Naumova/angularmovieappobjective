@@ -17,7 +17,11 @@ import { NavbarComponent } from './components/navbar/navbar.component';
   ],
   exports: [
     NavbarComponent,
-    MovieComponent
+    MovieComponent,
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
   ],
   imports: [
     CommonModule,

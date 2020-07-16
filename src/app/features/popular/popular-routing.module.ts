@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
-import { PageNotFoundComponent } from './page-not-found.component';
 import { RouterModule, Routes } from '@angular/router';
+import { PopularComponent } from './popular.component';
+
 
 const routes: Routes = [
-  { path: '**', component: PageNotFoundComponent } // Wildcard route for a 404 page
+  { path: 'popular', component: PopularComponent }
 ];
-
 @NgModule({
   declarations: [],
   imports: [
@@ -15,5 +15,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class PageNotFoundRoutingModule { }
-
+export class PopularRoutingModule { }
