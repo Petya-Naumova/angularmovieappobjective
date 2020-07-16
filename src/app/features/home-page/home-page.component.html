@@ -1,35 +1,36 @@
-<mat-card class="example-card" style="margin-top: 8rem">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      <a routerLink="/top-rated" routerLinkActive="active">Top Rated</a>
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px" style="margin-top: 8rem">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        <a routerLink="/top-rated" routerLinkActive="active">Top Rated</a>
+      </mat-card-title>
+    </mat-card-header>
+    <div class="image-holder">
+      <img mat-card-image src="./assets/images/gabrielesinferno.jpg" alt="Photo of a Shiba Inu">
+    </div>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
 
-<mat-card class="example-card" style="margin-top: 8rem">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      <a routerLink="/popular" routerLinkActive="active">Top Rated</a>
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card>
+  <mat-card fxLayout="row" fxLayoutAlign="space-between" fxLayoutGap="10px" style="margin-top: 8rem">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-image"></div>
+      <mat-card-title>
+        <a routerLink="/popular" routerLinkActive="active">Popular</a>
+      </mat-card-title>
+    </mat-card-header>
+    <div class="image-holder">
+      <img mat-card-image src="./assets/images/theequalizer.jpg" alt="Photo of a Shiba Inu">
+    </div>
+    <mat-card-content>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-button>LIKE</button>
+      <button mat-button>SHARE</button>
+    </mat-card-actions>
+  </mat-card>
+
