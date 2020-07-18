@@ -1,27 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { AppRoutingModule } from '../app-routing.module';
-
 import { MovieComponent } from './components/movie/movie-component.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    NavbarComponent,
     MovieComponent
-  ],
-  exports: [
-    NavbarComponent,
-    MovieComponent,
-    MatMenuModule,
-    MatButtonModule,
-    MatCardModule,
-    MatIconModule,
   ],
   imports: [
     CommonModule,
@@ -29,8 +19,15 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    FlexLayoutModule,
-    AppRoutingModule
+    FlexLayoutModule
+  ],
+  exports: [
+    MovieComponent,
+    MatMenuModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+    MatDialogModule
   ]
 })
 export class SharedModule { }

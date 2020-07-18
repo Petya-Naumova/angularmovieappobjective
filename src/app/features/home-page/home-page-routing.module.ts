@@ -3,13 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './home-page.component';
 
 const routes: Routes = [
-  { path: '', component: HomePageComponent }
+
+  { path: 'popular', loadChildren: () => import('../popular/popular.module').then(m => m.PopularModule) },
+  { path: 'top-rated', loadChildren: () => import('../top-rated/top-rated.module').then(m => m.TopRatedModule) },
+  { path: '', component: HomePageComponent },
+  { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
   declarations: [],
   imports: [
-    RouterModule.forChild(routes)
+    RouterModule.forRoot(routes)
   ],
   exports: [
     RouterModule

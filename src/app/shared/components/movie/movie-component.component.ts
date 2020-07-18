@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { MoviePopularService} from '../../../core/services/movie-popular/movie-popular.service';
 import { MovieTopRatedService } from '../../../core/services/movie-top-rated/movie-top-rated.service';
 import { MovieModel } from '../../../core/interfaces/movie-model/movie-model';
+import {MatDialog} from '@angular/material/dialog';
 
 
 @Component({
@@ -13,9 +14,11 @@ import { MovieModel } from '../../../core/interfaces/movie-model/movie-model';
 export class MovieComponent implements OnInit {
   public receivedPopularMovies: MovieModel[] = [];
   public receivedTopRatedMovies: MovieModel[] = [];
+
   constructor(private moviePopularService: MoviePopularService,
               private movieTopRatedService: MovieTopRatedService,
-              private router: Router) { }
+              private router: Router,
+              public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.onLoad();
@@ -32,4 +35,13 @@ export class MovieComponent implements OnInit {
         .subscribe(responseData => this.receivedTopRatedMovies = responseData.results);
     }
   }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(MovieComponent);
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+
 }

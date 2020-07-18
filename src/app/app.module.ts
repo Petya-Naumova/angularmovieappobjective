@@ -2,18 +2,14 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
-import { HomePageModule } from './features/home-page/home-page.module';
-import { AboutModule } from './features/about/about.module';
-import { TopRatedModule } from './features/top-rated/top-rated.module';
-import { PopularModule } from './features/popular/popular.module';
-
-import { PageNotFoundModule } from './features/page-not-found/page-not-found.module';
-
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+import { HomePageRoutingModule } from './features/home-page/home-page-routing.module';
 
+import { HomePageModule } from './features/home-page/home-page.module';
+import { AboutModule } from './features/about/about.module';
+import { PageNotFoundModule } from './core/components/page-not-found/page-not-found.module';
 import { AppComponent } from './app.component';
-
 
 
 @NgModule({
@@ -23,13 +19,12 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    CoreModule,
+    SharedModule,
+    HomePageRoutingModule,
     HomePageModule,
     AboutModule,
-    TopRatedModule,
-    PopularModule,
-    PageNotFoundModule,
-    CoreModule,
-    SharedModule
+    PageNotFoundModule
   ],
   exports: [],
   providers: [],
