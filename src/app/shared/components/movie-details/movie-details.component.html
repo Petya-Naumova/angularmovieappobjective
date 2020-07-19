@@ -14,6 +14,11 @@
     <img mat-card-image src="http://image.tmdb.org/t/p/w185/{{ data.model.poster_path }}" alt="{{ data.model.title }}">
     <div class="movie-overview">
       {{ data.model.overview }}
+      <div mat-dialog-actions>
+        <button mat-button mat-dialog-close (click)="close()">Close</button>
+      </div>
     </div>
+
   </div>
+
 </div>

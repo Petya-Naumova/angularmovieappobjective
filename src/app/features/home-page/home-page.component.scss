@@ -6,11 +6,12 @@
   }
  .mat-card {
     max-width: 960px;
-    padding: 16px 30px 16px 30px
+    padding: 16px 30px 16px 30px;
   }
   .mat-card-image {
     max-width: 600px;
     padding: 20px;
+    cursor: pointer;
   }
   .image-holder {
     display: flex;

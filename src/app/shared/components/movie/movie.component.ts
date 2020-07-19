@@ -1,10 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { Router } from '@angular/router';
 import { MoviePopularService} from '../../../core/services/movie-popular/movie-popular.service';
 import { MovieTopRatedService } from '../../../core/services/movie-top-rated/movie-top-rated.service';
 import { MovieDetailsService } from '../../../core/services/movie-details/movie-details.service';
 import { MovieModel } from '../../../core/interfaces/movie-model/movie-model';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import {MatDialog, MatDialogConfig, MatDialogRef} from '@angular/material/dialog';
 import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Component({
@@ -16,12 +16,13 @@ export class MovieComponent implements OnInit {
   public receivedPopularMovies: MovieModel[] = [];
   public receivedTopRatedMovies: MovieModel[] = [];
 
-  @Input() modalTranscludableAreaType: 'top-rated'| 'popular';
+  @Input() modalTranscludeAreaType: 'top-rated'| 'popular';
+  @Output() passingValueFromModalEvent = new EventEmitter<string>();
   constructor(private moviePopularService: MoviePopularService,
               private movieTopRatedService: MovieTopRatedService,
               private movieDetailsService: MovieDetailsService,
               private router: Router,
-              public dialog: MatDialog) {
+              public  dialog: MatDialog) {
   }
 
   ngOnInit(): void {
@@ -41,14 +42,20 @@ export class MovieComponent implements OnInit {
   }
 
   openDialog(movieId): void {
+
     this.movieDetailsService.getMovieDetails(movieId)
       .subscribe(responseData => {
-        console.log(responseData);
+        // console.log(responseData);
+
         this.dialog.open(MovieDetailsComponent, {
           height: '400px',
           width: '600px',
-          data: { model : responseData, modalMiddlePart: this.modalTranscludableAreaType }
+          data: { model : responseData, modalMiddlePart: this.modalTranscludeAreaType },
+        }).afterClosed().subscribe(passedValueFromTheModal => {
+          this.passingValueFromModalEvent.emit(passedValueFromTheModal);
+          console.log(`This is MovieComponent, sibling of MovieDetails, Dialog value: ${passedValueFromTheModal}`);
         });
       });
   }
+
 }

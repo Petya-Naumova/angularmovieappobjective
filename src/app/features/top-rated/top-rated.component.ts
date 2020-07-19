@@ -11,5 +11,7 @@ export class TopRatedComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  addPassedValueFromChild(newPassedValue: string){
+    console.log('This is Top-rated, the parent of movie component: ', newPassedValue);
+  }
 }
