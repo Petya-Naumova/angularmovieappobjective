@@ -1,24 +1,28 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { MoviePopularService} from '../../../core/services/movie-popular/movie-popular.service';
 import { MovieTopRatedService } from '../../../core/services/movie-top-rated/movie-top-rated.service';
+import { MovieDetailsService } from '../../../core/services/movie-details/movie-details.service';
 import { MovieModel } from '../../../core/interfaces/movie-model/movie-model';
-import {MatDialog} from '@angular/material/dialog';
-
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MovieDetailsComponent } from '../movie-details/movie-details.component';
 
 @Component({
   selector: 'app-movie-component',
-  templateUrl: './movie-component.component.html',
-  styleUrls: ['./movie-component.component.scss']
+  templateUrl: './movie.component.html',
+  styleUrls: ['./movie.component.scss']
 })
 export class MovieComponent implements OnInit {
   public receivedPopularMovies: MovieModel[] = [];
   public receivedTopRatedMovies: MovieModel[] = [];
 
+  @Input() modalTranscludableAreaType: 'top-rated'| 'popular';
   constructor(private moviePopularService: MoviePopularService,
               private movieTopRatedService: MovieTopRatedService,
+              private movieDetailsService: MovieDetailsService,
               private router: Router,
-              public dialog: MatDialog) { }
+              public dialog: MatDialog) {
+  }
 
   ngOnInit(): void {
     this.onLoad();
@@ -36,12 +40,15 @@ export class MovieComponent implements OnInit {
     }
   }
 
-  openDialog() {
-    const dialogRef = this.dialog.open(MovieComponent);
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log(`Dialog result: ${result}`);
-    });
+  openDialog(movieId): void {
+    this.movieDetailsService.getMovieDetails(movieId)
+      .subscribe(responseData => {
+        console.log(responseData);
+        this.dialog.open(MovieDetailsComponent, {
+          height: '400px',
+          width: '600px',
+          data: { model : responseData, modalMiddlePart: this.modalTranscludableAreaType }
+        });
+      });
   }
-
 }

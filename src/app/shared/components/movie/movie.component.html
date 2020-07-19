@@ -1,5 +1,5 @@
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <mat-card (click)="openDialog()" fxFlex="18" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let movie of receivedPopularMovies">
+  <mat-card (click)="openDialog(movie.id)" fxFlex="18" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let movie of receivedPopularMovies">
     <mat-card-header>
       <mat-card-title>{{ movie.title }}</mat-card-title>
       <mat-card-subtitle>{{ movie.release_date | date }}
@@ -20,7 +20,7 @@
   </mat-card>
 </div>
 <div fxLayout="row wrap" fxLayoutAlign="center center" fxLayoutGap="10px">
-  <mat-card fxFlex="18" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let movie of receivedTopRatedMovies">
+  <mat-card (click)="openDialog(movie.id)"  fxFlex="18" fxFlex.md="33" fxFlex.sm="50" fxFlex.xs="100" *ngFor="let movie of receivedTopRatedMovies">
     <mat-card-header>
       <mat-card-title>{{ movie.title }}</mat-card-title>
       <mat-card-subtitle>{{ movie.release_date | date }}

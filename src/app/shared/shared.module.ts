@@ -7,11 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import { MovieComponent } from './components/movie/movie-component.component';
+import { MovieComponent } from './components/movie/movie.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
-    MovieComponent
+    MovieComponent,
+    MovieDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -21,13 +23,16 @@ import { MovieComponent } from './components/movie/movie-component.component';
     MatIconModule,
     FlexLayoutModule
   ],
+  entryComponents: [
+    MovieDetailsComponent
+  ],
   exports: [
-    MovieComponent,
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    MatDialogModule
+    MatDialogModule,
+    MovieComponent
   ]
 })
 export class SharedModule { }

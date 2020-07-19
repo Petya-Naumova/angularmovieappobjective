@@ -1,0 +1,19 @@
+<div mat-dialog-content class="movie-details-holder">
+  <div class="header">
+    <h1>{{ data.model.title }}</h1>
+  </div>
+  <div class="middle-content">
+    <div *ngIf="data.modalMiddlePart == 'popular'">
+      <h3>This movie comes from Popular Movies</h3>
+    </div>
+    <div *ngIf="data.modalMiddlePart == 'top-rated'">
+      <h3>This movie comes from Top Rated Movies</h3>
+    </div>
+  </div>
+  <div class="content">
+    <img mat-card-image src="http://image.tmdb.org/t/p/w185/{{ data.model.poster_path }}" alt="{{ data.model.title }}">
+    <div class="movie-overview">
+      {{ data.model.overview }}
+    </div>
+  </div>
+</div>

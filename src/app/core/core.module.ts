@@ -1,5 +1,4 @@
 import {NgModule, Optional, SkipSelf} from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
@@ -12,7 +11,6 @@ import { SharedModule } from '../shared/shared.module';
   declarations: [NavbarComponent],
   exports: [NavbarComponent],
   imports: [
-    CommonModule,
     HttpClientModule,
     RouterModule,
     SharedModule

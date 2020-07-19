@@ -6,8 +6,7 @@ const routes: Routes = [
 
   { path: 'popular', loadChildren: () => import('../popular/popular.module').then(m => m.PopularModule) },
   { path: 'top-rated', loadChildren: () => import('../top-rated/top-rated.module').then(m => m.TopRatedModule) },
-  { path: '', component: HomePageComponent },
-  { path: '', redirectTo: '', pathMatch: 'full' }
+  { path: '', component: HomePageComponent, redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
