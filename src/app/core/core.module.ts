@@ -7,6 +7,7 @@ import { MovieTopRatedService } from './services/movie-top-rated/movie-top-rated
 import { NavbarComponent } from '../core/components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
+import { httpInterceptorProviders } from './interceptors';
 
 @NgModule({
   declarations: [NavbarComponent],
@@ -15,11 +16,12 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     RouterModule,
     SharedModule,
-    CommonModule
+    CommonModule,
   ],
   providers: [
     MoviePopularService,
-    MovieTopRatedService
+    MovieTopRatedService,
+    httpInterceptorProviders
   ]
 })
 export class CoreModule {
