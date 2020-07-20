@@ -17,6 +17,7 @@
           <div *ngIf="formControls.username.errors.required">Username is required</div>
           <div *ngIf="formControls.username.errors.minlength">Username must be at least 4 characters long.</div>
           <div *ngIf="formControls.username.errors.maxlength">Username must be max 15 characters long.</div>
+          <div *ngIf="formControls.username.errors.pattern">Username must include only letters or numbers, spaces and special characters are not allowed.</div>
         </div>
 
 
@@ -29,7 +30,8 @@
         <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
           <div *ngIf="formControls.password.errors.required">Password is required</div>
           <div *ngIf="formControls.password.errors.minlength">Password must be at least 4 characters long.</div>
-          <div *ngIf="formControls.username.errors.maxlength">Password must max 15 characters long.</div>
+          <div *ngIf="formControls.password.errors.maxlength">Password must max 15 characters long.</div>
+          <div *ngIf="formControls.password.errors.pattern">Username must include only letters or numbers, spaces and special characters are not allowed.</div>
         </div>
 
       </mat-card-content>
