@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { MatMenuModule } from '@angular/material/menu';
 import { MatButtonModule } from '@angular/material/button';
@@ -19,6 +20,8 @@ import { MatInputModule } from '@angular/material/input';
   ],
   imports: [
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
@@ -32,6 +35,8 @@ import { MatInputModule } from '@angular/material/input';
     MovieDetailsComponent
   ],
   exports: [
+    FormsModule,
+    ReactiveFormsModule,
     MatMenuModule,
     MatButtonModule,
     MatCardModule,
