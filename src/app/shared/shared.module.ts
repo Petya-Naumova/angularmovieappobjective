@@ -9,6 +9,8 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { MovieComponent } from './components/movie/movie.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,10 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     MatButtonModule,
     MatCardModule,
     MatIconModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatFormFieldModule,
+    MatInputModule
+
   ],
   entryComponents: [
     MovieDetailsComponent
@@ -32,7 +37,11 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     MatCardModule,
     MatIconModule,
     MatDialogModule,
-    MovieComponent
+    MovieComponent,
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    FlexLayoutModule
   ]
 })
 export class SharedModule { }

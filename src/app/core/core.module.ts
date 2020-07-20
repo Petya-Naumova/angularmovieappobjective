@@ -6,6 +6,7 @@ import { MoviePopularService } from './services/movie-popular/movie-popular.serv
 import { MovieTopRatedService } from './services/movie-top-rated/movie-top-rated.service';
 import { NavbarComponent } from '../core/components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [NavbarComponent],
@@ -13,7 +14,8 @@ import { SharedModule } from '../shared/shared.module';
   imports: [
     HttpClientModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    CommonModule
   ],
   providers: [
     MoviePopularService,
