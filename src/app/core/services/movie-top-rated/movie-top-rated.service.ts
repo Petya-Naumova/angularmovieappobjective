@@ -8,8 +8,7 @@ import { MoviesResultsArray } from '../../interfaces/movie-results-array/movie-r
 export class MovieTopRatedService {
   private topRatedMovieUrl = 'https://api.themoviedb.org/3/movie/top_rated?' + '&language=en-US&page=1';
   constructor(private http: HttpClient) { }
-    getTopRateMovies() { {
+    getTopRateMovies() {
       return this.http.get<MoviesResultsArray>(this.topRatedMovieUrl);
-    }
   }
 }
