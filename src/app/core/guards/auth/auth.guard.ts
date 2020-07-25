@@ -11,7 +11,7 @@ export class AuthGuard implements CanActivate {
   canActivate(next: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
 
     if (sessionStorage.getItem('sessionId') === null) {
-      this.router.navigate(['']);
+      this.router.navigate(['/']);
       return false;
     }
     return true;
