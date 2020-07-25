@@ -8,9 +8,10 @@ import { NavbarComponent } from '../core/components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { httpInterceptorProviders } from './interceptors';
+import { SetAuthentificationComponent } from './components/set-authentification/set-authentification.component';
 
 @NgModule({
-  declarations: [NavbarComponent],
+  declarations: [NavbarComponent, SetAuthentificationComponent],
   exports: [NavbarComponent],
   imports: [
     HttpClientModule,

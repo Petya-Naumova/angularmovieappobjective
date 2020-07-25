@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { HomePageComponent } from './home-page.component';
+import { NotLoggedHomepageComponent } from './not-logged-homepage.component';
 
-describe('HomePageComponent', () => {
-  let component: HomePageComponent;
-  let fixture: ComponentFixture<HomePageComponent>;
+describe('NotloggedhomepageComponent', () => {
+  let component: NotLoggedHomepageComponent;
+  let fixture: ComponentFixture<NotLoggedHomepageComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ HomePageComponent ]
+      declarations: [ NotLoggedHomepageComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(HomePageComponent);
+    fixture = TestBed.createComponent(NotLoggedHomepageComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

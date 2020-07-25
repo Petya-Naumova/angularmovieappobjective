@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './home-page.component';
+import { DashboardComponent } from './dashboard.component';
+import { AuthGuard } from '../../core/guards/auth/auth.guard';
 
 const routes: Routes = [
 
   { path: 'popular', loadChildren: () => import('../popular/popular.module').then(m => m.PopularModule) },
   { path: 'top-rated', loadChildren: () => import('../top-rated/top-rated.module').then(m => m.TopRatedModule) },
-  { path: ':request_token', component: HomePageComponent, redirectTo: '', pathMatch: 'full'},
-  { path: '', component: HomePageComponent, redirectTo: '', pathMatch: 'full'}
+  { path: 'dashboard', component: DashboardComponent, pathMatch: 'full', canActivate: [AuthGuard]},
 ];
 
 @NgModule({
@@ -19,4 +19,4 @@ const routes: Routes = [
     RouterModule
   ]
 })
-export class HomePageRoutingModule { }
+export class DashboardRoutingModule { }

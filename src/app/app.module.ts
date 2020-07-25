@@ -4,17 +4,23 @@ import { NgModule } from '@angular/core';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
+
 import { LoginModule } from './features/login/login.module';
-
 import { LoginRoutingModule } from './features/login/login-routing.module';
-import { HomePageRoutingModule } from './features/home-page/home-page-routing.module';
 
-import { HomePageModule } from './features/home-page/home-page.module';
+import { DashboardModule } from './features/dashboard/dashboard.module';
+import { DashboardRoutingModule } from './features/dashboard/dashboard-routing.module';
+
 import { AboutModule } from './features/about/about.module';
+import { AboutRoutingModule } from './features/about/about-routing.module';
+
+import { NotLoggedHomePageModule } from './features/notloggedhomepage/not-logged-home-page.module';
+import { NotLoggedHomePageRoutingModule } from './features/notloggedhomepage/not-logged-home-page-routing.module';
+
 import { PageNotFoundModule } from './core/components/page-not-found/page-not-found.module';
+import { AppRoutingModule } from './app-routing.module';
+
 import { AppComponent } from './app.component';
-
-
 
 
 @NgModule({
@@ -28,10 +34,14 @@ import { AppComponent } from './app.component';
     SharedModule,
     LoginModule,
     LoginRoutingModule,
-    HomePageRoutingModule,
-    HomePageModule,
+    DashboardModule,
+    DashboardRoutingModule,
     AboutModule,
-    PageNotFoundModule
+    AboutRoutingModule,
+    NotLoggedHomePageModule,
+    NotLoggedHomePageRoutingModule,
+    PageNotFoundModule,
+    AppRoutingModule
   ],
   exports: [],
   providers: [],
