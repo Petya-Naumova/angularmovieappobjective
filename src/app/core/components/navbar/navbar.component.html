@@ -17,6 +17,14 @@
      routerLinkActive="active">
     About
   </a>
+  <a *ngIf="isLogoutVisible()" mat-button=""
+     aria-label=""
+     class=""
+     tabindex="0"
+     aria-disabled="false"
+    (click)="logout()">
+    Logout
+  </a>
 </nav>
 <router-outlet></router-outlet>
 

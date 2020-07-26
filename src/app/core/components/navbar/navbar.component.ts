@@ -8,9 +8,17 @@ import { Router} from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   ngOnInit() {
   }
 
+  logout(): void {
+    console.log('dsdfds');
+    sessionStorage.removeItem('sessionId');
+    this.router.navigate(['']);
+  }
+  isLogoutVisible() {
+    return sessionStorage.getItem('sessionId') !== null;
+  }
 }
