@@ -17,6 +17,8 @@ import { AboutRoutingModule } from './features/about/about-routing.module';
 import { NotLoggedHomePageModule } from './features/notloggedhomepage/not-logged-home-page.module';
 import { NotLoggedHomePageRoutingModule } from './features/notloggedhomepage/not-logged-home-page-routing.module';
 
+import { SearchModule } from './features/search/search.module';
+
 import { PageNotFoundModule } from './core/components/page-not-found/page-not-found.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -41,6 +43,7 @@ import { AppComponent } from './app.component';
     AboutRoutingModule,
     NotLoggedHomePageModule,
     NotLoggedHomePageRoutingModule,
+    SearchModule,
     PageNotFoundModule,
     AppRoutingModule
   ],

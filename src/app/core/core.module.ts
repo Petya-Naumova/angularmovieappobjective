@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { CommonModule } from '@angular/common';
 import { httpInterceptorProviders } from './interceptors';
 import { SetAuthentificationComponent } from './components/set-authentification/set-authentification.component';
+import {SearchModule} from "../features/search/search.module";
 
 @NgModule({
   declarations: [NavbarComponent, SetAuthentificationComponent],
@@ -18,6 +19,7 @@ import { SetAuthentificationComponent } from './components/set-authentification/
     RouterModule,
     SharedModule,
     CommonModule,
+    SearchModule
   ],
   providers: [
     MoviePopularService,

@@ -1,0 +1,14 @@
+<form [formGroup]="searchForm" (ngSubmit)="submitSearch(searchedval.value)"  class="example-form-field">
+  <mat-form-field>
+    <mat-label class="example-form-field-label">Seacrh for movies...</mat-label>
+      <p [ngClass]="{ 'has-error': isSubmitted && formControls.searched.errors }">
+        <input id="searched" formControlName="searched" required class="example-form-field-input" matInput type="text" #searchedval>
+      </p>
+    <div *ngIf="isSubmitted && formControls.searched.errors" class="help-block">
+      <div *ngIf="formControls.searched.errors.required">Please type a search word</div>
+    </div>
+    <button type="submit" class="example-form-field-input-button" mat-button>
+      Search
+    </button>
+  </mat-form-field>
+</form>
