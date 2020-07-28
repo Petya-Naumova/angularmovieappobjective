@@ -17,6 +17,8 @@
      routerLinkActive="active">
     About
   </a>
+  <div class="flex-spacer"></div>
+  <app-search *ngIf="isSearchVisible()"></app-search>
   <a *ngIf="isLogoutVisible()" mat-button=""
      aria-label=""
      class=""
@@ -25,7 +27,6 @@
     (click)="logout()">
     Logout
   </a>
-  <app-search></app-search>
 </nav>
 <router-outlet></router-outlet>
 

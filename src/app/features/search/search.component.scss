@@ -1,3 +1,15 @@
-.example-form-field, .example-form-field-input, .example-form-field-label {
+.example-form-field, .example-form-field-input {
   color: white;
 }
+:host ::ng-deep .example-form-field {
+  mat-form-field {
+    .mat-form-field-wrapper {
+      .mat-form-field-underline {
+        background-color: white!important;
+      }
+    }
+  }
+}
+
+
+

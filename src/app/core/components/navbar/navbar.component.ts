@@ -21,4 +21,7 @@ export class NavbarComponent implements OnInit {
   isLogoutVisible() {
     return sessionStorage.getItem('sessionId') !== null;
   }
+  isSearchVisible() {
+    return sessionStorage.getItem('sessionId') !== null;
+  }
 }
