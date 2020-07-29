@@ -11,10 +11,11 @@ export class NavbarComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit() {
+
   }
 
   logout(): void {
-    console.log('dsdfds');
+
     sessionStorage.removeItem('sessionId');
     this.router.navigate(['']);
   }

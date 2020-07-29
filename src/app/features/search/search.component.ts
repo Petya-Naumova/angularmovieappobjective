@@ -1,7 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Inject, Input, OnInit, TemplateRef, ViewChild} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import { SearchService } from '../../core/services/search/search.service';
 import { MovieModel } from '../../core/interfaces/movie-model/movie-model';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-search',
@@ -9,12 +10,14 @@ import { MovieModel } from '../../core/interfaces/movie-model/movie-model';
   styleUrls: ['./search.component.scss']
 })
 export class SearchComponent implements OnInit {
-
+  @ViewChild('callAPIDialog') callAPIDialog: TemplateRef<any>;
   searchForm: FormGroup;
   isSubmitted = false;
-  public receivedSearchedMovies: MovieModel[] = [];
 
-  constructor(private searchService: SearchService, private formBuilder: FormBuilder) {
+  receivedSearchedMovies: MovieModel[] = [];
+  isMovieHasBeenSearched = false;
+
+  constructor(private searchService: SearchService, private formBuilder: FormBuilder, public  dialog: MatDialog) {
   }
 
 
@@ -36,7 +39,14 @@ export class SearchComponent implements OnInit {
         .subscribe(responseData => {
           console.log('responseData: ', responseData);
           this.receivedSearchedMovies = responseData.results;
+          const dialogRef = this.dialog.open(this.callAPIDialog);
+          // this.dialog.open(callAPIDialog, {
+          //   height: '400px',
+          //   width: '600px',
+          //   data: { model : responseData },
+          // });
         });
     }
   }
 }
+
